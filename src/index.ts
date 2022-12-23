@@ -3,5 +3,3 @@ async function main() {
 }
 
 main()
-  .catch((error) => console.error(error))
-  .then(() => process.exit(0))
