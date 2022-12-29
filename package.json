@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf build && tsc",
-    "start": "NODE_ENV=production yarn build && node build/index.js",
+    "start": "NODE_ENV=production node build/index.js",
     "dev": "NODE_ENV=development nodemon src/index.ts"
   },
   "devDependencies": {
