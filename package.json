@@ -5,19 +5,23 @@
   "author": "lumen-limitless",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf build && tsc",
+    "build": "rimraf build && ncc build src/index.ts -o build/ -m",
+    "dist": "pnpm build && pkg build/index.js --out-path dist/ --targets node16-linux-x64,node16-macos-x64,node16-win-x64",
     "start": "NODE_ENV=production node build/index.js",
+    "start:dist": "NODE_ENV=production ./dist/index-linux",
     "dev": "NODE_ENV=development nodemon src/index.ts"
   },
   "devDependencies": {
-    "@types/node": "^18.11.9",
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
-    "@typescript-eslint/parser": "^5.44.0",
-    "eslint": "^8.28.0",
+    "@types/node": "^18.15.13",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint": "^8.38.0",
     "lodash": "^4.17.21",
-    "nodemon": "^2.0.20",
+    "ncc": "^0.3.6",
+    "nodemon": "^2.0.22",
+    "pkg": "^5.8.1",
     "ts-node": "^10.9.1",
-    "tslib": "^2.4.1",
-    "typescript": "^4.9.3"
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4"
   }
 }

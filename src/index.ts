@@ -1,5 +1,5 @@
 async function main() {
-  return
+  console.log('sup')
 }
 
 main()

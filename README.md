@@ -1,1 +1,1 @@
-A template for writing scripts with typescript and Node.js
+A template for writing scripts with typescript and Node.js.
