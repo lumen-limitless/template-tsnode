@@ -1,19 +1,19 @@
 {
   "name": "template-tsnode",
   "version": "1.0.0",
-  "main": "build/index.js",
-  "author": "lumen-limitless",
-  "license": "MIT",
   "private": true,
+  "license": "MIT",
+  "author": "lumen-limitless",
+  "main": "build/index.js",
   "scripts": {
     "build": "rimraf build && ncc build src/index.ts -o build/ -m",
+    "coverage": "jest --coverage",
+    "dev": "NODE_ENV=development nodemon src/index.ts",
     "dist": "rimraf build && ncc build src/index.ts -o build/ -m && pkg build/index.js --out-path dist/ --targets node18-linux-x64,node18-macos-x64,node18-win-x64",
+    "lint": "eslint --ext .ts src/",
     "start": "NODE_ENV=production node build/index.js",
     "start:dist": "NODE_ENV=production ./dist/index-linux",
-    "dev": "NODE_ENV=development nodemon src/index.ts",
-    "lint": "eslint --ext .ts src/",
-    "test": "jest",
-    "coverage": "jest --coverage"
+    "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
