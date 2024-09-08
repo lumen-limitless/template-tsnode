@@ -10,13 +10,13 @@
     "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --outfile=build/index.js",
     "coverage": "jest --coverage",
     "dev": "NODE_ENV=development nodemon src/index.ts",
-    "lint": "eslint --ext .ts src/",
+    "lint": "eslint .",
     "start": "NODE_ENV=production node build/index.js",
     "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
-    "@types/node": "^20.4.0",
+    "@types/node": "^22.5.4",
     "@typescript-eslint/eslint-plugin": "^8.4.0",
     "@typescript-eslint/parser": "^8.4.0",
     "esbuild": "^0.23.1",
