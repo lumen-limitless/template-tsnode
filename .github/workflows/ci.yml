@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: ['18.x']
+        node: ['20.x']
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
@@ -19,35 +19,22 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        id: pnpm-install
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
         with:
-          version: 'latest'
-          run_install: false
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm ci
 
       - name: Lint
-        run: pnpm lint
+        run: npm run lint
 
       - name: Test
-        run: pnpm test
+        run: npm test
 
       - name: Build
-        run: pnpm build
+        run: npm run build
