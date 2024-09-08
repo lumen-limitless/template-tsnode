@@ -6,7 +6,7 @@ This repository provides a robust template for developing Node.js applications u
 
 - **TypeScript Support**: Leverage the power of static typing for more reliable code.
 - **ESBuild**: Fast bundling and minification for production builds.
-- **Nodemon**: Automatic server restarts during development for a smoother workflow.
+- **tsx**: Automatic server restarts during development for a smoother workflow.
 - **Jest**: Integrated testing framework for writing and running tests.
 - **ESLint**: Linting tool to help maintain code quality and consistency.
 - **Prettier**: Code formatter to ensure uniform code style across your project.
