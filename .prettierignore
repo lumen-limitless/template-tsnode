@@ -1,0 +1,28 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore node_modules directory:
+node_modules
+
+# Ignore all markdown files:
+*.md
+
+# Ignore all log files:
+*.log
+
+# Ignore .git directory:
+.git
+
+# Ignore .vscode directory:
+.vscode
+
+# Ignore .DS_Store files:
+.DS_Store
+
+# Ignore yarn files:
+yarn.lock
+.yarn
+
+# Ignore npm files:
+package-lock.json
