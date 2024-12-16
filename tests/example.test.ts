@@ -1,5 +1,3 @@
-import { describe, it } from 'node:test';
-
-describe('My Test Suite', () => {
-  it('should do something', () => {});
+test('adds 1 + 2 to equal 3', () => {
+  expect(1 + 2).toBe(3);
 });
